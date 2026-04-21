@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="강릉 기반 인생 2막 라이프 리모델링 서비스. 리허설·리모델링·리멤버 3대 프로그램으로 시니어의 제2의 삶을 설계합니다.">
+<meta name="keywords" content="리본라운지, 인생2막, 강릉, 노후준비, 생애설계, 자산관리, 시니어, 강의, 유언장">
+<meta property="og:title" content="리본라운지 Re-Born Lounge | 인생 2막 라이프 리모델링">
+<meta property="og:description" content="인생 2막, 다시 태어나는 당신의 자산 그리고 삶">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://re-bornlounge.com">
+<title>리본라운지 Re-Born Lounge | 인생 2막 라이프 리모델링</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --purple:       #7B5EA7;
+  --purple-dark:  #5c4680;
+  --purple-light: #a07fcb;
+  --gold:         #C8A96E;
+  --gold-light:   #e2c99a;
+  --cream:        #FAF8F4;
+  --cream2:       #F2EDE4;
+  --beige:        #EDE5D8;
+  --text:         #2a2020;
+  --text-mid:     #5a4a4a;
+  --text-muted:   #8a7a7a;
+  --white:        #ffffff;
+  --radius:       14px;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--cream); color: var(--text); line-height: 1.75; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(123,94,167,0.12);
+  height: 68px;
+  display: flex; align-items: center;
+  padding: 0 48px;
+  justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-logo img { height: 44px; width: 44px; object-fit: contain; }
+.nav-logo-text { line-height: 1.25; }
+.nav-logo-name { font-size: 15px; font-weight: 800; color: var(--purple-dark); letter-spacing: -0.3px; }
+.nav-logo-sub  { font-size: 10px; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--text-mid); font-size: 14px; font-weight: 500; transition: color .2s; }
+.nav-links a:hover { color: var(--purple); }
+.nav-cta {
+  background: var(--purple); color: var(--white);
+  padding: 10px 24px; border-radius: 30px;
+  font-size: 13px; font-weight: 700; text-decoration: none;
+  transition: background .2s, transform .2s;
+}
+.nav-cta:hover { background: var(--purple-dark); transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 100px 48px 80px;
+  overflow: hidden;
+}
+/* 배경: 따뜻한 크림-베이지 그라데이션 (배경 이미지 느낌) */
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    linear-gradient(105deg,
+      rgba(250,248,244,0.97) 0%,
+      rgba(242,237,228,0.92) 40%,
+      rgba(237,229,216,0.6) 70%,
+      rgba(230,220,205,0.3) 100%);
+}
+/* 오른쪽 장식 — 노트·안경 감성 SVG 대체 원형 */
+.hero-deco {
+  position: absolute; right: 0; top: 0; bottom: 0;
+  width: 52%; z-index: 0;
+  background:
+    radial-gradient(ellipse at 80% 40%, rgba(200,169,110,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 60% 70%, rgba(123,94,167,0.08) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(237,229,216,0.6) 0%, rgba(250,248,244,0.2) 100%);
+}
+/* 오른쪽 큰 원 장식 */
+.hero-circle {
+  position: absolute; right: 8%; top: 50%;
+  transform: translateY(-50%);
+  width: 420px; height: 420px; border-radius: 50%;
+  background: rgba(200,169,110,0.07);
+  border: 2px solid rgba(200,169,110,0.15);
+  z-index: 0;
+}
+.hero-circle::before {
+  content: '';
+  position: absolute; inset: 30px; border-radius: 50%;
+  background: rgba(123,94,167,0.05);
+  border: 1px solid rgba(123,94,167,0.1);
+}
+
+.hero-inner {
+  max-width: 1100px; margin: 0 auto; width: 100%;
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  align-items: center;
+}
+
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(123,94,167,0.3);
+  color: var(--purple); font-size: 11px;
+  letter-spacing: 2px; padding: 6px 16px; border-radius: 20px;
+  margin-bottom: 24px; text-transform: uppercase; font-weight: 600;
+  background: rgba(123,94,167,0.05);
+}
+.hero h1 {
+  font-size: clamp(34px, 3.8vw, 54px);
+  font-weight: 900; line-height: 1.2;
+  margin-bottom: 10px; color: var(--text);
+}
+.hero h1 .line2 { color: var(--purple); }
+.hero h1 .line3 { color: var(--text); }
+.hero-sub {
+  font-size: 15px; color: var(--text-muted); margin-bottom: 6px;
+  font-weight: 500; letter-spacing: 0.5px;
+}
+.hero-desc {
+  font-size: 15px; color: var(--text-mid); line-height: 1.8;
+  margin-bottom: 36px; max-width: 460px;
+}
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--purple); color: var(--white);
+  padding: 15px 32px; border-radius: 30px;
+  font-size: 15px; font-weight: 700; text-decoration: none;
+  transition: all .2s; display: inline-block;
+  box-shadow: 0 4px 16px rgba(123,94,167,0.3);
+}
+.btn-primary:hover { background: var(--purple-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(123,94,167,0.35); }
+.btn-outline {
+  border: 2px solid var(--purple); color: var(--purple);
+  padding: 15px 32px; border-radius: 30px;
+  font-size: 15px; font-weight: 600; text-decoration: none;
+  transition: all .2s; display: inline-block;
+}
+.btn-outline:hover { background: var(--purple); color: var(--white); }
+
+.hero-stats {
+  display: flex; gap: 36px; margin-top: 48px;
+  padding-top: 36px; border-top: 1px solid rgba(123,94,167,0.12);
+}
+.hero-stat .num { font-size: 28px; font-weight: 900; color: var(--gold); }
+.hero-stat .label { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+/* 히어로 오른쪽 — 아이덴티티 카드 */
+.hero-right { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.logo-big {
+  width: 200px; height: 200px; object-fit: contain;
+  filter: drop-shadow(0 8px 32px rgba(123,94,167,0.2));
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+.hero-programs {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(200,169,110,0.25);
+  border-radius: 20px; padding: 28px 32px; width: 100%;
+  box-shadow: 0 8px 40px rgba(123,94,167,0.08);
+}
+.hero-prog-title {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); font-weight: 700; margin-bottom: 16px;
+}
+.hero-prog-item { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.hero-prog-icon {
+  width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(123,94,167,0.12), rgba(200,169,110,0.12));
+  display: flex; align-items: center; justify-content: center; font-size: 16px;
+}
+.hero-prog-item h4 { font-size: 14px; font-weight: 700; color: var(--purple-dark); margin-bottom: 1px; }
+.hero-prog-item p  { font-size: 12px; color: var(--text-muted); }
+
+/* ── SECTION 공통 ── */
+section { padding: 96px 48px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag {
+  display: block; font-size: 11px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold);
+  font-weight: 700; margin-bottom: 10px;
+}
+.section-title {
+  font-size: clamp(26px, 2.8vw, 40px);
+  font-weight: 900; line-height: 1.25; margin-bottom: 14px; color: var(--text);
+}
+.section-desc { font-size: 15px; color: var(--text-muted); max-width: 540px; line-height: 1.8; }
+
+/* ── WHY ── */
+#why { background: var(--cream2); }
+.why-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 24px; margin-top: 52px;
+}
+.why-card {
+  background: var(--white); border-radius: var(--radius);
+  padding: 36px 28px; border: 1px solid rgba(200,169,110,0.2);
+  transition: transform .2s, box-shadow .2s;
+}
+.why-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(123,94,167,0.1); }
+.why-icon { font-size: 36px; margin-bottom: 14px; }
+.why-card h3 { font-size: 18px; font-weight: 700; color: var(--purple-dark); margin-bottom: 8px; }
+.why-card p  { font-size: 14px; color: var(--text-muted); line-height: 1.75; }
+.why-stat { font-size: 26px; font-weight: 900; color: var(--gold); margin-top: 14px; }
+
+/* ── PROGRAMS ── */
+#programs { background: var(--white); }
+.programs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; margin-top: 52px; }
+.prog-card {
+  border-radius: 18px; overflow: hidden;
+  border: 1px solid rgba(200,169,110,0.18);
+  transition: transform .2s, box-shadow .2s;
+  background: var(--white);
+}
+.prog-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(123,94,167,0.12); }
+.prog-header { padding: 30px 26px 22px; }
+.prog-card:nth-child(1) .prog-header { background: linear-gradient(135deg, #5c4680, #7B5EA7); }
+.prog-card:nth-child(2) .prog-header { background: linear-gradient(135deg, #8B6914, #C8A96E); }
+.prog-card:nth-child(3) .prog-header { background: linear-gradient(135deg, #3a2d5e, #6b5ea7); }
+.prog-num { font-size: 10px; letter-spacing: 3px; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+.prog-header h3 { font-size: 20px; font-weight: 900; color: var(--white); margin-bottom: 4px; }
+.prog-header p  { font-size: 13px; color: rgba(255,255,255,0.75); }
+.prog-body { padding: 26px; }
+.prog-body > p { font-size: 13px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
+.prog-list { list-style: none; }
+.prog-list li {
+  font-size: 13px; color: var(--text-mid);
+  padding: 5px 0; border-bottom: 1px solid var(--cream2);
+  display: flex; align-items: flex-start; gap: 8px;
+}
+.prog-list li::before { content: '✦'; color: var(--gold); flex-shrink: 0; font-size: 10px; margin-top: 3px; }
+.prog-price {
+  margin-top: 16px; padding: 12px 16px;
+  background: var(--cream2); border-radius: 8px;
+  font-size: 13px; color: var(--purple-dark); font-weight: 700;
+}
+
+/* ── LECTURE ── */
+#lecture { background: var(--cream2); }
+.lecture-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 52px; }
+.lec-card {
+  background: var(--white); border-radius: 16px; padding: 36px;
+  border: 1px solid rgba(200,169,110,0.2); transition: transform .2s, box-shadow .2s;
+}
+.lec-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(123,94,167,0.1); }
+.lec-badge {
+  display: inline-block; background: var(--purple); color: var(--white);
+  font-size: 11px; letter-spacing: 1px; padding: 4px 14px;
+  border-radius: 20px; margin-bottom: 16px; font-weight: 600;
+}
+.lec-badge.gold { background: var(--gold); color: var(--white); }
+.lec-card h3 { font-size: 20px; font-weight: 700; color: var(--purple-dark); margin-bottom: 10px; line-height: 1.4; }
+.lec-card .target { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.6; }
+.lec-points { list-style: none; margin-bottom: 0; }
+.lec-points li {
+  font-size: 13px; color: var(--text-mid); padding: 5px 0;
+  display: flex; gap: 8px; border-bottom: 1px solid var(--cream2);
+}
+.lec-points li::before { content: '→'; color: var(--purple); font-weight: 700; flex-shrink: 0; }
+.lec-info {
+  margin-top: 20px; padding: 14px 16px;
+  background: var(--cream2); border-radius: 8px;
+  font-size: 13px; color: var(--text-muted); line-height: 1.8;
+}
+.lecture-cta { text-align: center; margin-top: 40px; }
+
+/* ── PROFILE ── */
+#profile { background: linear-gradient(160deg, #3a2650 0%, #5c4680 50%, #7B5EA7 100%); }
+.profile-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 360px 1fr; gap: 80px; align-items: start;
+}
+.profile-photo {
+  border-radius: 20px; overflow: hidden;
+  aspect-ratio: 3/4; background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(200,169,110,0.3);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.profile-photo img { width: 100%; height: 100%; object-fit: cover; }
+.profile-no-img {
+  text-align: center; color: rgba(255,255,255,0.4); font-size: 14px; padding: 40px;
+}
+.profile-quote-badge {
+  position: absolute; bottom: -1px; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(58,38,80,0.95));
+  padding: 40px 24px 24px;
+  color: var(--gold-light); font-size: 15px; font-weight: 500;
+  font-style: italic; line-height: 1.5; text-align: center;
+}
+
+.profile-content { padding-top: 8px; }
+.profile-content .section-tag { color: var(--gold-light); }
+.profile-content .section-title { color: var(--white); margin-bottom: 6px; }
+.profile-name-sub { font-size: 17px; color: rgba(255,255,255,0.6); font-weight: 400; margin-bottom: 20px; }
+.profile-content .section-desc { color: rgba(255,255,255,0.72); max-width: 100%; margin-bottom: 32px; }
+
+.profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 28px; }
+.profile-item {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px; padding: 14px 16px;
+}
+.profile-item .label { font-size: 10px; color: var(--gold-light); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+.profile-item .value { font-size: 13px; color: var(--white); line-height: 1.5; }
+
+.media-links { display: flex; flex-direction: column; gap: 8px; }
+.media-link {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px; padding: 14px 18px;
+  text-decoration: none; color: rgba(255,255,255,0.85); font-size: 13px;
+  transition: background .2s;
+}
+.media-link:hover { background: rgba(255,255,255,0.14); color: var(--white); }
+.media-link-icon { font-size: 18px; flex-shrink: 0; }
+
+/* ── NEWS ── */
+#news { background: var(--cream); }
+.news-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 52px; }
+.news-card {
+  background: var(--white); border-radius: var(--radius); overflow: hidden;
+  border: 1px solid rgba(200,169,110,0.18); transition: transform .2s, box-shadow .2s;
+}
+.news-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(123,94,167,0.1); }
+.news-thumb {
+  height: 160px; background: var(--cream2);
+  display: flex; align-items: center; justify-content: center; font-size: 44px;
+}
+.news-body { padding: 22px; }
+.news-date { font-size: 11px; color: var(--gold); font-weight: 600; letter-spacing: 1px; margin-bottom: 8px; }
+.news-body h4 { font-size: 16px; font-weight: 700; color: var(--purple-dark); margin-bottom: 8px; line-height: 1.5; }
+.news-body p  { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+.news-more {
+  display: block; text-align: center; margin-top: 44px;
+  color: var(--purple); text-decoration: none;
+  font-size: 14px; font-weight: 700; letter-spacing: 1px;
+  padding: 13px 32px; border: 2px solid var(--purple); border-radius: 30px;
+  width: fit-content; margin-left: auto; margin-right: auto; transition: all .2s;
+}
+.news-more:hover { background: var(--purple); color: var(--white); }
+
+/* ── LOCATION ── */
+#location { background: var(--cream2); }
+.location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 52px; align-items: start; }
+.map-wrap {
+  border-radius: 16px; overflow: hidden; height: 320px;
+  border: 1px solid rgba(200,169,110,0.25);
+}
+.map-wrap iframe { width: 100%; height: 100%; border: 0; }
+.location-info h3 { font-size: 20px; font-weight: 700; color: var(--purple-dark); margin-bottom: 22px; }
+.location-item { display: flex; gap: 14px; margin-bottom: 18px; align-items: flex-start; }
+.location-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+.location-item h4 { font-size: 13px; font-weight: 700; color: var(--purple-dark); margin-bottom: 2px; }
+.location-item p  { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+.hours-table { width: 100%; border-collapse: collapse; margin-top: 18px; }
+.hours-table td { padding: 8px 0; font-size: 13px; border-bottom: 1px solid rgba(123,94,167,0.08); color: var(--text-muted); }
+.hours-table td:first-child { font-weight: 700; color: var(--purple-dark); width: 80px; }
+
+/* ── CONTACT ── */
+#contact {
+  background: linear-gradient(135deg, #3a2650 0%, #5c4680 60%, #7B5EA7 100%);
+  padding: 100px 48px;
+  text-align: center;
+}
+.contact-inner { max-width: 760px; margin: 0 auto; }
+#contact .section-tag { color: var(--gold-light); }
+#contact .section-title { color: var(--white); margin-bottom: 14px; }
+#contact .section-desc { color: rgba(255,255,255,0.7); margin: 0 auto 44px; max-width: 480px; }
+.contact-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 36px; }
+.contact-card {
+  background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 14px; padding: 24px 14px; text-align: center;
+}
+.contact-card .icon { font-size: 26px; margin-bottom: 8px; }
+.contact-card .clabel { font-size: 10px; color: rgba(255,255,255,0.5); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+.contact-card .cvalue { font-size: 13px; color: var(--white); font-weight: 700; }
+.contact-btn {
+  background: var(--gold); color: var(--purple-dark);
+  padding: 17px 48px; border-radius: 30px; font-size: 16px; font-weight: 800;
+  text-decoration: none; display: inline-block; transition: all .2s;
+  box-shadow: 0 4px 20px rgba(200,169,110,0.4);
+}
+.contact-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+/* ── FOOTER ── */
+footer { background: #1e1520; padding: 44px 48px; color: rgba(255,255,255,0.35); font-size: 13px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-logo { font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.65); margin-bottom: 4px; }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: var(--gold-light); }
+
+/* ── 모바일 ── */
+@media (max-width: 900px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  section { padding: 64px 24px; }
+  .hero { padding: 90px 24px 64px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-right { display: none; }
+  .hero-stats { gap: 24px; }
+  .why-grid, .programs-grid, .news-grid { grid-template-columns: 1fr; }
+  .lecture-grid { grid-template-columns: 1fr; }
+  .profile-inner { grid-template-columns: 1fr; gap: 36px; }
+  .profile-grid { grid-template-columns: 1fr; }
+  .location-grid { grid-template-columns: 1fr; }
+  .contact-cards { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  #contact { padding: 72px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="images/logo.png" alt="리본라운지 로고" onerror="this.style.display='none'">
+    <div class="nav-logo-text">
+      <div class="nav-logo-name">Re-Born Lounge</div>
+      <div class="nav-logo-sub">리본라운지</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#why">왜 지금인가</a></li>
+    <li><a href="#programs">프로그램</a></li>
+    <li><a href="#lecture">강의</a></li>
+    <li><a href="#profile">대표소개</a></li>
+    <li><a href="#news">소식</a></li>
+    <li><a href="#location">오시는 길</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">상담 신청</a>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-deco"></div>
+  <div class="hero-circle"></div>
+  <div class="hero-inner">
+    <!-- 왼쪽 텍스트 -->
+    <div>
+      <div class="hero-tag">🎀 5060 시니어세대를 위한 라이프 리모델링 서비스</div>
+      <h1>
+        인생 2막,<br>
+        <span class="line2">다시 태어나는</span><br>
+        <span class="line3">당신의 자산 그리고 삶</span>
+      </h1>
+      <p class="hero-sub">종합 자산관리 &amp; 유언플랜 전문 서비스</p>
+      <p class="hero-desc">살고 싶었던 곳, 하고 싶었던 일, 되고 싶었던 나.<br>늦지 않았습니다. 강릉에서 먼저 살아보고,<br>리모델링하고, 기억으로 남기세요.</p>
+      <div class="hero-btns">
+        <a href="#programs" class="btn-primary">교육 예약하기</a>
+        <a href="#contact" class="btn-outline">상담 신청하기</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">15년</div><div class="label">금융전문 경력</div></div>
+        <div class="hero-stat"><div class="num">5천+</div><div class="label">누적 교육 인원</div></div>
+        <div class="hero-stat"><div class="num">3대</div><div class="label">핵심 프로그램</div></div>
+      </div>
+    </div>
+    <!-- 오른쪽 로고+카드 -->
+    <div class="hero-right">
+      <img src="images/logo.png" alt="리본라운지 로고" class="logo-big" onerror="this.style.display='none'">
+      <div class="hero-programs">
+        <div class="hero-prog-title">Re-Born Lounge Programs</div>
+        <div class="hero-prog-item">
+          <div class="hero-prog-icon">🎭</div>
+          <div><h4>리허설 플랜</h4><p>강릉에서 인생 2막을 먼저 살아보기</p></div>
+        </div>
+        <div class="hero-prog-item">
+          <div class="hero-prog-icon">🔧</div>
+          <div><h4>리모델링 플랜</h4><p>자산·경력·라이프 종합 재설계</p></div>
+        </div>
+        <div class="hero-prog-item">
+          <div class="hero-prog-icon">📋</div>
+          <div><h4>리멤버 플랜</h4><p>내 삶을 기록하고 소중한 사람 지키기</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── WHY ── -->
+<section id="why">
+  <div class="section-inner">
+    <span class="section-tag">Why Re-Born Lounge</span>
+    <h2 class="section-title">왜 지금<br>리본라운지가 필요한가요?</h2>
+    <p class="section-desc">초고령사회 진입, 편중된 자산, 늘어나는 상속 분쟁.<br>인생 2막을 준비하지 않으면 노후가 위험해집니다.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">👴</div>
+        <h3>초고령사회 진입</h3>
+        <p>65세 이상 인구가 2030년 전체의 28%로 급증합니다. 베이비붐 세대의 본격 은퇴 시대가 왔습니다.</p>
+        <div class="why-stat">20.3% → 28%</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🏘️</div>
+        <h3>부동산 편중 자산</h3>
+        <p>50대 자산의 71.5%가 부동산. 현금흐름 없는 노후는 불안합니다. 지금 리모델링이 필요합니다.</p>
+        <div class="why-stat">자산의 71.5%</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⚖️</div>
+        <h3>상속·증여 분쟁 급증</h3>
+        <p>상속 분쟁이 4년 새 62% 급증. 사전 계획 없이는 가족 갈등이 됩니다. 리멤버 플랜으로 준비하세요.</p>
+        <div class="why-stat">4년 새 62% 증가</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROGRAMS ── -->
+<section id="programs">
+  <div class="section-inner">
+    <span class="section-tag">Core Programs</span>
+    <h2 class="section-title">3대 핵심 프로그램</h2>
+    <p class="section-desc">리허설·리모델링·리멤버. 인생 2막의 처음부터 끝까지 함께합니다.</p>
+    <div class="programs-grid">
+      <div class="prog-card">
+        <div class="prog-header">
+          <div class="prog-num">PROGRAM 01</div>
+          <h3>🎭 리허설 플랜</h3>
+          <p>강릉에서 인생 2막을 먼저 살아보세요</p>
+        </div>
+        <div class="prog-body">
+          <p>결정하기 전에 먼저 살아보는 것이 답입니다. 강릉에서 직접 생활해보며 내 인생 2막을 경험합니다.</p>
+          <ul class="prog-list">
+            <li>지역 가이드 1:1 매칭 서비스</li>
+            <li>바닷가 맨발걷기·힐링 체험</li>
+            <li>강릉 맛집·시장·문화공간 탐방</li>
+            <li>강릉 이주 타당성 상담</li>
+            <li>1박2일 / 2박3일 패키지</li>
+          </ul>
+          <div class="prog-price">💰 1박2일 150,000원~ (숙박 별도)</div>
+        </div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-header">
+          <div class="prog-num">PROGRAM 02</div>
+          <h3>🔧 리모델링 플랜</h3>
+          <p>자산·경력·라이프를 새롭게 설계합니다</p>
+        </div>
+        <div class="prog-body">
+          <p>금융, 부동산, 연금, 세금, 보험, 증여·상속까지 하나의 그림으로 연결하는 종합 컨설팅입니다.</p>
+          <ul class="prog-list">
+            <li>보유 자산 종합 진단</li>
+            <li>퇴직금·연금 최적화 전략</li>
+            <li>증여·상속 사전 계획</li>
+            <li>경력자산 발굴 및 창업 상담</li>
+            <li>강릉 이주 생활비 시뮬레이션</li>
+          </ul>
+          <div class="prog-price">💰 첫 회 상담 500,000원 (2~3회 진행)</div>
+        </div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-header">
+          <div class="prog-num">PROGRAM 03</div>
+          <h3>📋 리멤버 플랜</h3>
+          <p>내 삶을 기록하고 소중한 사람을 지킵니다</p>
+        </div>
+        <div class="prog-body">
+          <p>법정 형식 유언장 작성부터 매년 갱신 기록 서비스. 가족 분쟁을 막고 마음의 짐을 덜어드립니다.</p>
+          <ul class="prog-list">
+            <li>법정 형식 유언장 작성 지원</li>
+            <li>보유 자산 목록 기록</li>
+            <li>보험 수익자 확인 및 정정</li>
+            <li>매년 갱신 컨설팅</li>
+            <li>분기별 노후준비 뉴스레터</li>
+          </ul>
+          <div class="prog-price">💰 최초 200,000원 / 매년 갱신 100,000원</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LECTURE ── -->
+<section id="lecture">
+  <div class="section-inner">
+    <span class="section-tag">Lecture</span>
+    <h2 class="section-title">강의 신청 · 출강 문의</h2>
+    <p class="section-desc">개인, 기업, 기관 어디든 찾아갑니다. 강원권 및 전국 출강 가능합니다.</p>
+    <div class="lecture-grid">
+      <div class="lec-card">
+        <span class="lec-badge">세금 강의</span>
+        <h3>비정형 근로자를 위한<br>세금 완전 정복</h3>
+        <p class="target">대상: 프리랜서·1인 사업자·플랫폼 노동자·부업 중인 직장인·시니어 재취업자</p>
+        <ul class="lec-points">
+          <li>3.3% 원천징수 vs 사업소득 처리 차이</li>
+          <li>경비 처리로 세금 합법적으로 줄이기</li>
+          <li>건강보험료 폭탄 피하는 소득 관리법</li>
+          <li>종합소득세 셀프 신고 가이드</li>
+          <li>프리랜서 건강보험 피부양자 유지 전략</li>
+        </ul>
+        <div class="lec-info">⏱ 1시간 30분~2시간 | 10명~100명 이상<br>📍 강원권 출강 + 전국 출강 가능 | 💰 별도 문의</div>
+      </div>
+      <div class="lec-card">
+        <span class="lec-badge gold">공식 강사</span>
+        <h3>해피투머로우30<br>전 국민 무료 노후준비 강의</h3>
+        <p class="target">주최: 생명보험사회공헌위원회 × 보건복지부 | 대상: 40대 이상 누구나, 지자체·복지관·기업</p>
+        <ul class="lec-points">
+          <li>초고령사회, 나의 노후는 안전한가?</li>
+          <li>여성의 생애주기와 독립적 노후 설계</li>
+          <li>부동산·연금·보험 종합 정리법</li>
+          <li>증여·상속 사전 계획의 필요성</li>
+          <li>리본라운지식 인생 2막 설계 방법</li>
+        </ul>
+        <div class="lec-info">⏱ 1시간~2시간 | 기관·단체 신청 환영<br>📍 무료 강의 신청 가능 | 💰 유료 출강 별도 문의</div>
+      </div>
+    </div>
+    <div class="lecture-cta">
+      <a href="#contact" class="btn-primary">강의 출강 문의하기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROFILE ── -->
+<section id="profile">
+  <div class="profile-inner">
+    <div class="profile-photo">
+      <img src="images/profile.jpg" alt="김지엽 대표"
+           onerror="this.parentElement.innerHTML='<div class=\'profile-no-img\'>📷<br><br>프로필 사진<br>준비 중</div><div class=\'profile-quote-badge\'>\"인생 2막,<br>함께 설계합시다\"</div>'">
+      <div class="profile-quote-badge">"인생 2막,<br>함께 설계합시다"</div>
+    </div>
+    <div class="profile-content">
+      <span class="section-tag">Expert</span>
+      <h2 class="section-title">김지엽 대표</h2>
+      <p class="profile-name-sub">Re-Born Lounge 설립자 · 자산관리 전문가 · 강사 · 작가</p>
+      <p class="section-desc">28년을 가정과 일에 바쳐온 제가 강릉으로 이주하여 리본라운지를 설립했습니다. 같은 길을 걸어온 분들의 인생 2막을 제대로 시작할 수 있도록 돕고 싶습니다.</p>
+      <div class="profile-grid">
+        <div class="profile-item"><div class="label">학력</div><div class="value">숭실대 금융부동산학 석사</div></div>
+        <div class="profile-item"><div class="label">자격증</div><div class="value">AFPK · 종합자산관리사 · RFG</div></div>
+        <div class="profile-item"><div class="label">경력</div><div class="value">한국재무설계 · 키움에셋<br>교육기관 경영 20년</div></div>
+        <div class="profile-item"><div class="label">강의</div><div class="value">해피투머로우30 공식 강사<br>누적 5,000명+ 교육</div></div>
+        <div class="profile-item"><div class="label">자문</div><div class="value">여성가족부 · 보건복지부<br>자문위원</div></div>
+        <div class="profile-item"><div class="label">저서</div><div class="value">『나는 사모님 말고<br>사장님이 되기로 했다』</div></div>
+      </div>
+      <div class="media-links">
+        <a href="https://www.youtube.com/watch?v=K-OOapc2KI0&t=1013s" target="_blank" class="media-link">
+          <span class="media-link-icon">▶️</span><span>3프로TV 출연 영상 보기</span>
+        </a>
+        <a href="https://woman.chosun.com/news/articleView.html?idxno=117419" target="_blank" class="media-link">
+          <span class="media-link-icon">📰</span><span>여성조선 기고 — 여성의 생애주기 관점 노후 준비 가이드</span>
+        </a>
+        <a href="https://woman.chosun.com/news/articleView.html?idxno=123355" target="_blank" class="media-link">
+          <span class="media-link-icon">📰</span><span>여성조선 기고 — 똑똑한 노후 준비, 자산관리법&amp;라이프 플래닝</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEWS ── -->
+<section id="news">
+  <div class="section-inner">
+    <span class="section-tag">News &amp; Info</span>
+    <h2 class="section-title">소식 &amp; 자료실</h2>
+    <p class="section-desc">노후준비 정보, 강의 일정, 리본라운지 새 소식을 전합니다.</p>
+    <div class="news-grid">
+      <div class="news-card">
+        <div class="news-thumb">🎉</div>
+        <div class="news-body">
+          <div class="news-date">2026. 03. 15</div>
+          <h4>제 1회 리본포럼 행사를 개최했습니다</h4>
+          <p>첫 번째 리본포럼이 성황리에 마무리됐습니다. 참가해주신 모든 분께 감사드립니다.</p>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-thumb">🌊</div>
+        <div class="news-body">
+          <div class="news-date">2026. 01. 01</div>
+          <h4>리본라운지, 강릉에서 문을 열었습니다</h4>
+          <p>2026년 새해, 강릉에서 인생 2막을 함께할 분들을 기다립니다. 언제든 문의해 주세요.</p>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-thumb">📚</div>
+        <div class="news-body">
+          <div class="news-date">2025. 12. 24</div>
+          <h4>해피투머로우30 강의 기관 신청 받습니다</h4>
+          <p>생명보험사회공헌위원회 × 보건복지부 공식 강의. 기관·단체 신청 문의 환영합니다.</p>
+        </div>
+      </div>
+    </div>
+    <a href="#contact" class="news-more">소식 더 보기 →</a>
+  </div>
+</section>
+
+<!-- ── LOCATION ── -->
+<section id="location">
+  <div class="section-inner">
+    <span class="section-tag">Location</span>
+    <h2 class="section-title">찾아오시는 길</h2>
+    <p class="section-desc">강릉 리본라운지에서 직접 만나요. 사전 예약 방문을 권장합니다.</p>
+    <div class="location-grid">
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=강원특별자치도+강릉시+포남동&output=embed&z=15" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="location-info">
+        <h3>리본라운지 Re-Born Lounge</h3>
+        <div class="location-item">
+          <div class="location-icon">📍</div>
+          <div><h4>주소</h4><p>강원특별자치도 강릉시 포남동 1234-5</p></div>
+        </div>
+        <div class="location-item">
+          <div class="location-icon">🚄</div>
+          <div><h4>KTX 이용 시</h4><p>강릉역 하차 → 택시 약 10분<br>서울~강릉 KTX 약 2시간</p></div>
+        </div>
+        <div class="location-item">
+          <div class="location-icon">🚗</div>
+          <div><h4>자가용 이용 시</h4><p>영동고속도로 강릉IC → 강릉시내 방면<br>건물 앞 주차 가능</p></div>
+        </div>
+        <table class="hours-table">
+          <tr><td>평일</td><td>10:00 ~ 18:00</td></tr>
+          <tr><td>주말</td><td>사전 예약 필수</td></tr>
+          <tr><td>전화</td><td>010-5412-7461</td></tr>
+          <tr><td>이메일</td><td>janifer0@naver.com</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="contact-inner">
+    <span class="section-tag">Contact</span>
+    <h2 class="section-title">인생 2막,<br>리본라운지와 함께 시작하세요</h2>
+    <p class="section-desc">강의 문의, 프로그램 상담, 방문 예약 모두 환영합니다.</p>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <div class="clabel">전화</div>
+        <div class="cvalue">010-5412-7461</div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">✉️</div>
+        <div class="clabel">이메일</div>
+        <div class="cvalue">janifer0@naver.com</div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📱</div>
+        <div class="clabel">인스타그램</div>
+        <div class="cvalue">@kimjanifer</div>
+      </div>
+    </div>
+    <a href="mailto:janifer0@naver.com" class="contact-btn">지금 문의하기</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">리본라운지 Re-Born Lounge</div>
+      <div>강원특별자치도 강릉시 포남동 1234-5 &nbsp;|&nbsp; 010-5412-7461 &nbsp;|&nbsp; janifer0@naver.com</div>
+      <div style="margin-top:4px;">© 2026 Re-Born Lounge. All rights reserved.</div>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.youtube.com/watch?v=K-OOapc2KI0&t=1013s" target="_blank">유튜브</a>
+      <a href="https://www.instagram.com/kimjanifer" target="_blank">인스타그램</a>
+      <a href="mailto:janifer0@naver.com">이메일</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
