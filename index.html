@@ -2,10 +2,8 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-  <meta name="naver-site-verification" content="459779f77225d6f9aad75c2afc1fe04f9b39ca4d" />
-
-  <meta name="google-site-verification" content="WILxLtofV62CItpQUDG52irfsZuj-Nt7CPItEBIjvms" />
-
+    <meta name="naver-site-verification" content="459779f77225d6f9aad75c2afc1fe04f9b39ca4d" />
+    <meta name="google-site-verification" content="WILxLtofV62CItpQUDG52irfsZuj-Nt7CPItEBIjvms" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="강릉 기반 인생 2막 라이프 리모델링 서비스. 리허설·리모델링·리멤버 3대 프로그램으로 시니어의 제2의 삶을 설계합니다.">
 <meta name="keywords" content="리본라운지, 인생2막, 강릉, 노후준비, 생애설계, 자산관리, 시니어, 강의, 유언장">
@@ -20,9 +18,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --purple:       #7B5EA7;
-  --purple-dark:  #5c4680;
-  --purple-light: #a07fcb;
+  --purple:       #9B6FD4;
+  --purple-dark:  #7B4FC4;
+  --purple-light: #C09AE8;
   --gold:         #C8A96E;
   --gold-light:   #e2c99a;
   --cream:        #FAF8F4;
@@ -293,12 +291,17 @@ section { padding: 96px 48px; }
 }
 .profile-photo {
   border-radius: 20px; overflow: hidden;
-  aspect-ratio: 3/4; background: rgba(255,255,255,0.1);
-  border: 2px solid rgba(200,169,110,0.3);
-  display: flex; align-items: center; justify-content: center;
+  width: 100%;
+  background: linear-gradient(160deg, #f2ede4, #e8dfd4);
+  box-shadow: 0 16px 48px rgba(123,94,167,0.15);
   position: relative;
 }
-.profile-photo img { width: 100%; height: 100%; object-fit: cover; }
+.profile-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: scaleX(-1);
+}
 .profile-no-img {
   text-align: center; color: rgba(255,255,255,0.4); font-size: 14px; padding: 40px;
 }
@@ -461,7 +464,7 @@ footer { background: #1e1520; padding: 44px 48px; color: rgba(255,255,255,0.35);
   <div class="hero-inner">
     <!-- 왼쪽 텍스트 -->
     <div>
-      <div class="hero-tag">🎀 5060 시니어세대를 위한 라이프 리모델링 서비스</div>
+      <div class="hero-tag"><img src="로고.png" alt="리본" style="height:20px;vertical-align:middle;margin-right:6px;" onerror="this.style.display='none'"> 시니어세대를 위한 라이프 리모델링 서비스</div>
       <h1>
         인생 2막,<br>
         <span class="line2">다시 태어나는</span><br>
@@ -472,11 +475,6 @@ footer { background: #1e1520; padding: 44px 48px; color: rgba(255,255,255,0.35);
       <div class="hero-btns">
         <a href="#programs" class="btn-primary">교육 예약하기</a>
         <a href="#contact" class="btn-outline">상담 신청하기</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="num">15년</div><div class="label">금융전문 경력</div></div>
-        <div class="hero-stat"><div class="num">5천+</div><div class="label">누적 교육 인원</div></div>
-        <div class="hero-stat"><div class="num">3대</div><div class="label">핵심 프로그램</div></div>
       </div>
     </div>
     <!-- 오른쪽 로고+카드 -->
@@ -552,7 +550,7 @@ footer { background: #1e1520; padding: 44px 48px; color: rgba(255,255,255,0.35);
             <li>강릉 이주 타당성 상담</li>
             <li>1박2일 / 2박3일 패키지</li>
           </ul>
-          <div class="prog-price">💰 1박2일 150,000원~ (숙박 별도)</div>
+
         </div>
       </div>
       <div class="prog-card">
@@ -570,7 +568,7 @@ footer { background: #1e1520; padding: 44px 48px; color: rgba(255,255,255,0.35);
             <li>경력자산 발굴 및 창업 상담</li>
             <li>강릉 이주 생활비 시뮬레이션</li>
           </ul>
-          <div class="prog-price">💰 첫 회 상담 500,000원 (2~3회 진행)</div>
+
         </div>
       </div>
       <div class="prog-card">
@@ -588,7 +586,7 @@ footer { background: #1e1520; padding: 44px 48px; color: rgba(255,255,255,0.35);
             <li>매년 갱신 컨설팅</li>
             <li>분기별 노후준비 뉴스레터</li>
           </ul>
-          <div class="prog-price">💰 최초 200,000원 / 매년 갱신 100,000원</div>
+
         </div>
       </div>
     </div>
@@ -603,6 +601,18 @@ footer { background: #1e1520; padding: 44px 48px; color: rgba(255,255,255,0.35);
     <p class="section-desc">개인, 기업, 기관 어디든 찾아갑니다. 강원권 및 전국 출강 가능합니다.</p>
     <div class="lecture-grid">
       <div class="lec-card">
+        <span class="lec-badge gold">노후준비 &amp; 경제강의</span>
+        <h3>해피투머로우30<br>전 국민 노후준비 강의</h3>
+        <p class="target">주최: 생명보험사회공헌위원회 × 보건복지부 | 대상: 전 국민 누구나, 지자체·복지관·기업</p>
+        <ul class="lec-points">
+          <li>초고령사회, 나의 노후는 안전한가?</li>
+          <li>여성의 생애주기와 독립적 노후 설계</li>
+          <li>부동산·연금·보험 종합 정리법</li>
+          <li>증여·상속 사전 계획의 필요성</li>
+        </ul>
+        <div class="lec-info">⏱ 1시간~2시간 | 기관·단체 신청 환영<br>📍 무료 강의 신청 가능 | 💰 유료 출강 별도 문의</div>
+      </div>
+      <div class="lec-card">
         <span class="lec-badge">세금 강의</span>
         <h3>비정형 근로자를 위한<br>세금 완전 정복</h3>
         <p class="target">대상: 프리랜서·1인 사업자·플랫폼 노동자·부업 중인 직장인·시니어 재취업자</p>
@@ -614,19 +624,6 @@ footer { background: #1e1520; padding: 44px 48px; color: rgba(255,255,255,0.35);
           <li>프리랜서 건강보험 피부양자 유지 전략</li>
         </ul>
         <div class="lec-info">⏱ 1시간 30분~2시간 | 10명~100명 이상<br>📍 강원권 출강 + 전국 출강 가능 | 💰 별도 문의</div>
-      </div>
-      <div class="lec-card">
-        <span class="lec-badge gold">공식 강사</span>
-        <h3>해피투머로우30<br>전 국민 무료 노후준비 강의</h3>
-        <p class="target">주최: 생명보험사회공헌위원회 × 보건복지부 | 대상: 40대 이상 누구나, 지자체·복지관·기업</p>
-        <ul class="lec-points">
-          <li>초고령사회, 나의 노후는 안전한가?</li>
-          <li>여성의 생애주기와 독립적 노후 설계</li>
-          <li>부동산·연금·보험 종합 정리법</li>
-          <li>증여·상속 사전 계획의 필요성</li>
-          <li>리본라운지식 인생 2막 설계 방법</li>
-        </ul>
-        <div class="lec-info">⏱ 1시간~2시간 | 기관·단체 신청 환영<br>📍 무료 강의 신청 가능 | 💰 유료 출강 별도 문의</div>
       </div>
     </div>
     <div class="lecture-cta">
@@ -640,20 +637,19 @@ footer { background: #1e1520; padding: 44px 48px; color: rgba(255,255,255,0.35);
   <div class="profile-inner">
     <div class="profile-photo">
       <img src="KakaoTalk_20221111_191017859.jpg" alt="김지엽 대표"
-           onerror="this.parentElement.innerHTML='<div class=\'profile-no-img\'>📷<br><br>프로필 사진<br>준비 중</div><div class=\'profile-quote-badge\'>\"인생 2막,<br>함께 설계합시다\"</div>'">
-      <div class="profile-quote-badge">"인생 2막,<br>함께 설계합시다"</div>
+           style="max-height:360px;width:100%;object-fit:cover;object-position:top;">
+      
     </div>
     <div class="profile-content">
       <span class="section-tag">Expert</span>
       <h2 class="section-title">김지엽 대표</h2>
-      <p class="profile-name-sub">Re-Born Lounge 설립자 · 자산관리 전문가 · 강사 · 작가</p>
-      <p class="section-desc">28년을 가정과 일에 바쳐온 제가 강릉으로 이주하여 리본라운지를 설립했습니다. 같은 길을 걸어온 분들의 인생 2막을 제대로 시작할 수 있도록 돕고 싶습니다.</p>
+      <p class="profile-name-sub">Re-Born Lounge 대표 · 자산관리 전문가 · 강사 · 작가</p>
+      <p class="section-desc"></p>
       <div class="profile-grid">
         <div class="profile-item"><div class="label">학력</div><div class="value">숭실대 금융부동산학 석사</div></div>
         <div class="profile-item"><div class="label">자격증</div><div class="value">AFPK · 종합자산관리사 · RFG</div></div>
         <div class="profile-item"><div class="label">경력</div><div class="value">한국재무설계 · 키움에셋<br>교육기관 경영 20년</div></div>
         <div class="profile-item"><div class="label">강의</div><div class="value">해피투머로우30 공식 강사<br>누적 5,000명+ 교육</div></div>
-        <div class="profile-item"><div class="label">자문</div><div class="value">여성가족부 · 보건복지부<br>자문위원</div></div>
         <div class="profile-item"><div class="label">저서</div><div class="value">『나는 사모님 말고<br>사장님이 되기로 했다』</div></div>
       </div>
       <div class="media-links">
@@ -787,4 +783,3 @@ footer { background: #1e1520; padding: 44px 48px; color: rgba(255,255,255,0.35);
 
 </body>
 </html>
-
