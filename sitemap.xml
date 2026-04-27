@@ -1,0 +1,9 @@
+<span class="hljs-meta"><?xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"UTF-8"</span>?></span>
+<span class="hljs-tag"><<span class="hljs-name">urlset</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.sitemaps.org/schemas/sitemap/0.9"</span>></span>
+  <span class="hljs-tag"><<span class="hljs-name">url</span>></span>
+    <span class="hljs-tag"><<span class="hljs-name">loc</span>></span>https://re-bornlounge.com/<span class="hljs-tag"></<span class="hljs-name">loc</span>></span>
+    <span class="hljs-tag"><<span class="hljs-name">lastmod</span>></span>2026-04-27<span class="hljs-tag"></<span class="hljs-name">lastmod</span>></span>
+    <span class="hljs-tag"><<span class="hljs-name">changefreq</span>></span>monthly<span class="hljs-tag"></<span class="hljs-name">changefreq</span>></span>
+    <span class="hljs-tag"><<span class="hljs-name">priority</span>></span>1.0<span class="hljs-tag"></<span class="hljs-name">priority</span>></span>
+  <span class="hljs-tag"></<span class="hljs-name">url</span>></span>
+<span class="hljs-tag"></<span class="hljs-name">urlset</span>></span>
