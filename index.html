@@ -420,8 +420,13 @@ footer { background: #1e1520; padding: 44px 48px; color: rgba(255,255,255,0.35);
   .nav-links { display: none; }
   section { padding: 64px 24px; }
   .hero { padding: 90px 24px 64px; }
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-  .hero-right { display: flex; order: 3; width: 100%; }
+  .hero-inner { grid-template-columns: 1fr; gap: 20px; flex-direction: column; }
+  .hero-right { display: flex; order: 2; width: 100%; }
+  .hero-right .logo-big { width: 60px; height: 60px; }
+  .hero-right { flex-direction: row; align-items: center; gap: 16px; }
+  .hero-programs { flex: 1; }
+  
+  .hero-inner > div:first-child { order: 1; }.logo-big { display: none; }
   .hero-stats { gap: 24px; }
   .why-grid, .programs-grid, .news-grid { grid-template-columns: 1fr; }
   .lecture-grid { grid-template-columns: 1fr; }
@@ -435,7 +440,8 @@ footer { background: #1e1520; padding: 44px 48px; color: rgba(255,255,255,0.35);
   border-radius: 20px; padding: 32px 36px; width: 100%;
   box-shadow: 0 8px 40px rgba(123,94,167,0.08);
 }
-  .hero-btns { order: 4; }
+  
+  .hero-inner > div:first-child { order: 1; }.hero-btns { order: 3; }
   .hero-prog-item { gap: 10px; margin-bottom: 12px; }
   .hero-prog-item h4 { font-size: 13px; }
   .hero-prog-item p { font-size: 11px; }
