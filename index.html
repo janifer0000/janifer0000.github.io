@@ -172,24 +172,24 @@ nav {
   50%      { transform: translateY(-12px); }
 }
 .hero-programs {
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.92);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(200,169,110,0.25);
-  border-radius: 20px; padding: 28px 32px; width: 100%;
+  border-radius: 20px; padding: 32px 36px; width: 100%;
   box-shadow: 0 8px 40px rgba(123,94,167,0.08);
 }
 .hero-prog-title {
-  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--gold); font-weight: 700; margin-bottom: 16px;
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--purple-dark); font-weight: 700; margin-bottom: 20px;
 }
-.hero-prog-item { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.hero-prog-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; }
 .hero-prog-icon {
-  width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
-  background: linear-gradient(135deg, rgba(123,94,167,0.12), rgba(200,169,110,0.12));
-  display: flex; align-items: center; justify-content: center; font-size: 16px;
+  width: 42px; height: 42px; border-radius: 12px; flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(155,111,212,0.15), rgba(200,169,110,0.15));
+  display: flex; align-items: center; justify-content: center; font-size: 20px;
 }
-.hero-prog-item h4 { font-size: 14px; font-weight: 700; color: var(--purple-dark); margin-bottom: 1px; }
-.hero-prog-item p  { font-size: 12px; color: var(--text-muted); }
+.hero-prog-item h4 { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 3px; }
+.hero-prog-item p  { font-size: 13px; color: var(--text-mid); }
 
 /* ── SECTION 공통 ── */
 section { padding: 96px 48px; }
@@ -421,14 +421,25 @@ footer { background: #1e1520; padding: 44px 48px; color: rgba(255,255,255,0.35);
   section { padding: 64px 24px; }
   .hero { padding: 90px 24px 64px; }
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-  .hero-right { display: none; }
+  .hero-right { display: flex; order: 3; width: 100%; }
   .hero-stats { gap: 24px; }
   .why-grid, .programs-grid, .news-grid { grid-template-columns: 1fr; }
   .lecture-grid { grid-template-columns: 1fr; }
   .profile-inner { grid-template-columns: 1fr; gap: 36px; }
   .profile-grid { grid-template-columns: 1fr; }
   .location-grid { grid-template-columns: 1fr; }
-  .contact-cards { grid-template-columns: 1fr; }
+  .hero-programs {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(200,169,110,0.25);
+  border-radius: 20px; padding: 32px 36px; width: 100%;
+  box-shadow: 0 8px 40px rgba(123,94,167,0.08);
+}
+  .hero-btns { order: 4; }
+  .hero-prog-item { gap: 10px; margin-bottom: 12px; }
+  .hero-prog-item h4 { font-size: 13px; }
+  .hero-prog-item p { font-size: 11px; }
+    .contact-cards { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; text-align: center; }
   #contact { padding: 72px 24px; }
 }
@@ -505,18 +516,22 @@ footer { background: #1e1520; padding: 44px 48px; color: rgba(255,255,255,0.35);
     <div class="hero-right">
       <img src="로고.png" alt="리본라운지 로고" class="logo-big" onerror="this.style.display='none'">
       <div class="hero-programs">
-        <div class="hero-prog-title">Re-Born Lounge Programs</div>
+        <div class="hero-prog-title">🎀 리본라운지 강의 안내</div>
         <div class="hero-prog-item">
-          <div class="hero-prog-icon">🎭</div>
-          <div><h4>리허설 플랜</h4><p>강릉에서 인생 2막을 먼저 살아보기</p></div>
-        </div>
-        <div class="hero-prog-item">
-          <div class="hero-prog-icon">🔧</div>
-          <div><h4>리모델링 플랜</h4><p>자산·경력·라이프 종합 재설계</p></div>
+          <div class="hero-prog-icon">💰</div>
+          <div>
+            <h4>프리랜서·자영업자 세금강의</h4>
+            <p>매주 화요일 저녁 6:30 · 90분</p>
+            <p style="font-size:11px;color:var(--text-muted);margin-top:4px;">1주 세금 시작하기 · 2주 종합소득세 · 3주 부가가치세 · 4주 건강보험료</p>
+          </div>
         </div>
         <div class="hero-prog-item">
           <div class="hero-prog-icon">📋</div>
-          <div><h4>리멤버 플랜</h4><p>내 삶을 기록하고 소중한 사람 지키기</p></div>
+          <div>
+            <h4>증여·상속·유언장 플랜 강의</h4>
+            <p>매주 목요일 오전 11:00 · 90분</p>
+            <p style="font-size:11px;color:var(--text-muted);margin-top:4px;">1주 세금 시작하기 · 2주 증여vs상속 · 3주 유언장플랜 · 4주 연명치료 기록</p>
+          </div>
         </div>
       </div>
     </div>
