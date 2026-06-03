@@ -417,7 +417,8 @@ footer { background: #1e1520; padding: 44px 48px; color: rgba(255,255,255,0.35);
 /* ── 모바일 ── */
 @media (max-width: 900px) {
   nav { padding: 0 20px; }
-  .hamburger { display: flex; }
+  .hamburger { display: none; }
+.hamburger { display: flex !important; }
   .nav-cta { display: none; }
   .nav-links { display: none; }
   section { padding: 64px 24px; }
@@ -427,6 +428,7 @@ footer { background: #1e1520; padding: 44px 48px; color: rgba(255,255,255,0.35);
     display: flex; flex-direction: column; gap: 24px;
   }
   .hero-inner > div:first-child { order: 1; display: block !important; }
+  .hero-btns { margin-top: 0; }
   .hero-right { order: 2; display: flex !important; width: 100%; flex-direction: column; }
   .logo-big { display: none !important; }
   .hero-btns { order: 3; flex-direction: row; gap: 10px; }
@@ -491,7 +493,6 @@ footer { background: #1e1520; padding: 44px 48px; color: rgba(255,255,255,0.35);
 .hamburger span {
   display: block; width: 24px; height: 2px;
   background: var(--purple); border-radius: 2px;
-  transition: all .3s;
 }
 .mobile-menu {
   display: none;
